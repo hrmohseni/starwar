@@ -1,0 +1,24 @@
+{
+  "name": "startwar.api",
+  "version": "1.0.0",
+  "description": "StarWar People API",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/index.ts",
+    "start-nocache": "ts-node-dev src/index-no-cache.ts"
+  },
+  "author": "Hamidreza",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.4",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "express": "^4.17.1",
+    "node-cache": "^5.1.2"
+  }
+}

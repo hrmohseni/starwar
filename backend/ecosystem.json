@@ -1,0 +1,8 @@
+{
+    "apps": [
+      {
+        "name": "StarWar People API",
+        "script": "./dist/index.js"
+      }
+    ]
+  }
