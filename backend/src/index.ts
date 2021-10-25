@@ -5,9 +5,26 @@ import { Film } from "./models/film";
 import { Species } from "./models/species";
 import { Plant } from "./models/plant";
 import NodeCache from 'node-cache';
+import cors from 'cors';
 
 const app = express();
 const port = 3000;
+const ENDPOINT_CORS ='http://localhost:4200, https://sw.rafk.ir';
+
+const whiteList: any[] = ENDPOINT_CORS!.split(",").map((x) => x.trim());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (whiteList.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(null, false);
+      }
+    },
+    credentials: true,
+  })
+);
+console.log("White list & Cors  :", whiteList);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,7 +33,7 @@ app.listen(port, () => {
   console.log(`StarWar People running on port http://localhost/${port}.`);
 });
 
-app.get('/', (req:Request, res:Response) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Hello Star War World!')
 })
 
@@ -87,8 +104,8 @@ const cache = new NodeCache();
 async function request(url: string) {
   const cached = cache.get(url);
   //Check whether exist is cache and return from cache
-  if (cached!==undefined) {
-    return JSON.parse(cached+"");
+  if (cached !== undefined) {
+    return JSON.parse(cached + "");
   }
   //Request to server and get response
   const headers = {
@@ -96,7 +113,7 @@ async function request(url: string) {
       "accept": "application/json"
     }
   };
-  const result = await axios.get(url,headers).then(res => res.data)
-  cache.set(url, JSON.stringify(result),0);
+  const result = await axios.get(url, headers).then(res => res.data)
+  cache.set(url, JSON.stringify(result), 0);
   return result;
 }
