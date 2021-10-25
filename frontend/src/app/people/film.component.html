@@ -1,0 +1,14 @@
+<div class="film-list">
+    <div *ngFor="let film of Films" class='film-item'>
+        <h3>{{film.title}} <small>({{film.releaseDate}})</small></h3>
+        <div class="clearfix">
+            <dl>
+                <dt> &nbsp;Director:</dt>
+                <dd>{{film.directors}}</dd>
+
+                <dt> &nbsp;Producerer:</dt>
+                <dd>{{film.producers}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>

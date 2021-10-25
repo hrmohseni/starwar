@@ -1,0 +1,24 @@
+.page-wrap{
+    width: 60em;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+h1.title{
+    font-size: 2.5em;
+    text-align: center;
+}
+@media screen and (max-width:60em) {
+    .page-wrap{
+        width:45em;
+    }
+}
+@media screen and (max-width:45em) {
+    .page-wrap{
+        width:30em;
+    }
+}
+@media screen and (max-width:30em) {
+    .page-wrap{
+        width:300px;
+    }
+}

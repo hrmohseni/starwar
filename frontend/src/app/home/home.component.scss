@@ -1,0 +1,88 @@
+.people-list {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    li {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        background-color: #eee;
+        margin: 0.5em;
+        padding: 0.3em 0;
+        height: 1.6em;
+        border-radius: 4px;
+        width: 14em;
+        display: inline-block;
+        &:hover {
+            color: #2c3a41;
+            background-color: #e6e6e6;
+            left: 0.1em;
+        }
+        .selected {
+            background-color: black;
+            color: white;
+            &:hover {
+                background-color: #505050;
+                color: white;
+            }
+        }
+        &:active {
+            background-color: black;
+            color: white;
+        }
+    }
+
+    .badge {
+        display: inline-block;
+        font-size: small;
+        color: white;
+        padding: 0.8em 0.7em 0 0.7em;
+        background-color: #405061;
+        line-height: 1em;
+        position: relative;
+        left: -1px;
+        top: -4px;
+        height: 1.8em;
+        margin-right: 0.8em;
+        border-radius: 4px 0 0 4px;
+        width: 1.1em;
+    }
+}
+input {
+    padding: 0.5rem;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 1em;
+    .search-box {
+        display: flex;
+        border: 1px solid #eeeeee;
+        border-radius: 46px;
+        padding: 0.3em;
+        input {
+            padding: 0.5rem;
+            border:none;
+            outline: none;
+            width:25em;
+            &:focus {
+                outline: none;
+            }
+        }
+        .search-icon,
+        .search-clear {
+            width: 25px;
+            margin-top: 0.2rem;
+        }
+    }
+}
+@media screen and (max-width:30em) {
+    .people-list li {
+        width:100%;
+    }
+    .search-wrapper .search-box input{
+        width: 100%;
+    }
+}
