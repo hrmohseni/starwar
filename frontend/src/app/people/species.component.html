@@ -1,0 +1,17 @@
+<div class="list">
+    <div *ngFor="let item of species" class='item'>
+        <h3>{{item.name}}</h3>
+        <div class="clearfix">
+            <dl>
+                <dt> &nbsp;Life Span:</dt>
+                <dd>{{item.averageLifeSpan}}</dd>
+
+                <dt> &nbsp;Classification:</dt>
+                <dd>{{item.classification}}</dd>
+
+                <dt> &nbsp;Language:</dt>
+                <dd>{{item.language}}</dd>
+            </dl>
+        </div>
+    </div>
+</div>

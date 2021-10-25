@@ -1,38 +1,42 @@
 <button [routerLink]="['/home']">Back</button>
 
 <div *ngIf="!loading;else loading_box">
-<h1>{{peopleDetail?.name}}</h1>
-<div class="card-container">
-    <div class="card profile">
-        <dl>
-            <dt>Height: </dt>
-            <dd>{{peopleDetail?.height}} &nbsp;</dd>
+    <h1>{{peopleDetail?.name}}</h1>
+    <div class="card-container">
+        <div class="card profile">
+            <dl>
+                <dt>Height: </dt>
+                <dd>{{peopleDetail?.height}} &nbsp;</dd>
 
-            <dt>Mass:</dt>
-            <dd>{{peopleDetail?.mass}} &nbsp;</dd>
+                <dt>Mass:</dt>
+                <dd>{{peopleDetail?.mass}} &nbsp;</dd>
 
-            <dt>Hair Color: </dt>
-            <dd>{{peopleDetail?.hairColor}} &nbsp;</dd>
+                <dt>Hair Color: </dt>
+                <dd>{{peopleDetail?.hairColor}} &nbsp;</dd>
 
-            <dt>Skin Color: </dt>
-            <dd>{{peopleDetail?.skinColor}} &nbsp;</dd>
+                <dt>Skin Color: </dt>
+                <dd>{{peopleDetail?.skinColor}} &nbsp;</dd>
 
-            <dt>Gender: </dt>
-            <dd>{{peopleDetail?.gender}} &nbsp;</dd>
+                <dt>Gender: </dt>
+                <dd>{{peopleDetail?.gender}} &nbsp;</dd>
 
-            <dt>Birth Year:</dt>
-            <dd>{{peopleDetail?.birthYear}} &nbsp;</dd>
-        </dl>
+                <dt>Birth Year:</dt>
+                <dd>{{peopleDetail?.birthYear}} &nbsp;</dd>
+            </dl>
+        </div>
+        <div class="card plant">
+            <h2>Homeplant: </h2>
+            <plant-view [plant]="peopleDetail?.homePlant"></plant-view>
+        </div>
     </div>
-    <div class="card plant">
-        <h2>Homeplant: </h2>
-        <plant-view [plant]="peopleDetail?.homePlant"></plant-view>
+    <div class="Species">
+        <species-list [species]="peopleDetail?.species"></species-list>
     </div>
-
+    <div class="film">
+        <h2>Filmography: </h2>
+        <film-list [Films]="peopleDetail?.films"></film-list>
+    </div>
 </div>
-<div class="film">
-    <h2>Filmography: </h2>
-    <film-list [Films]="peopleDetail?.films"></film-list>
-</div>
-</div>
-<ng-template #loading_box><app-loading *ngIf="loading"></app-loading></ng-template>
+<ng-template #loading_box>
+    <app-loading *ngIf="loading"></app-loading>
+</ng-template>

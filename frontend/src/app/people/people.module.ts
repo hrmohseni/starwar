@@ -7,6 +7,7 @@ import { FilmListComponent } from './film.component';
 import { LandComponent } from './land.component';
 import { PeopleService } from '@app/services/people.service';
 import { LoadingComponent } from '@app/shared/loading/loading.component';
+import { SpeciesListComponent } from './species.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { LoadingComponent } from '@app/shared/loading/loading.component';
     PeopleComponent,
     FilmListComponent,
     LandComponent,
+    SpeciesListComponent,
     LoadingComponent
   ],
   imports: [
